@@ -10,9 +10,9 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	textureDuck.loadFromFile("gfx/coolDuck.png");
 	textureBall.loadFromFile("gfx/Beach_Ball.png");
 	textureGoomba.loadFromFile("gfx/Goomba.png");
-	level1.loadFromFile("gfx/Level1_1.png");
+	textureLevel1.loadFromFile("gfx/Level1_1.png");
 
-	bg.setTexture(&level1);
+	bg.setTexture(&textureLevel1);
 	bg.setSize(sf::Vector2f(11038, 675));
 
 	//https://clipart-library.com/clip-art/car-cartoon-transparent-9.htm
@@ -53,7 +53,9 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	enemy2.setWindow(window);
 	enemy2.setTexture(&textureBall);
 
-
+	bg.setInput(input);
+	bg.setView(&view);
+	bg.getRect().setTexture(&textureLevel1);
 }
 
 Level::~Level()
@@ -72,7 +74,7 @@ void Level::handleInput(float dt)
 
 	//player.handleInput(dt);
 
-	bg.handleInput(dt);
+	bg.handleInput(dt); //- causing crash?
 }
 
 // Update game objects

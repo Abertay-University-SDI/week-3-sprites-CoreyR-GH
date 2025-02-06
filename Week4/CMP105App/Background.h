@@ -5,9 +5,17 @@
 class Background : public GameObject
 {
 public:
+	Background();
+	~Background();
+
 	void handleInput(float dt);
+	void setView(sf::View* newView);
+	void setInput(Input* in);
+
+	sf::RectangleShape getRect();
 private:
-	sf::View view;
+	Input* input;
+	sf::View* view;
 	sf::RectangleShape rect;
 	sf::Texture background;
 };

@@ -29,7 +29,7 @@ private:
 	sf::Texture textureCar;
 	sf::Texture textureCity;
 	sf::Texture textureBall;
-	sf::Texture level1;
+	sf::Texture textureLevel1;
 
 	Player player;
 	Background bg;
