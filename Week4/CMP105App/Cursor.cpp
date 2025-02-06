@@ -22,7 +22,7 @@ void Cursor::setInput(Input* in)
 void Cursor::update(float dt)
 {
 	// no clue how to keep position when view is moved
-	setPosition(input->getMouseX(), input->getMouseY());
+	setPosition(window->mapPixelToCoords(sf::Vector2i(input->getMouseX(), input->getMouseY()), *view));
 }
 
 void Cursor::setWindowAndView(sf::RenderWindow* tWindow, sf::View* tView)

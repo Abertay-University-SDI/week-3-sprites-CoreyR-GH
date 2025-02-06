@@ -71,6 +71,7 @@ void Level::handleInput(float dt)
 	//player.handleInput(dt);
 
 	bg.handleInput(dt);
+	mouse.handleInput(dt);
 }
 
 // Update game objects
@@ -97,12 +98,15 @@ void Level::render()
 	//window->draw(duck);
 	//window->draw(car);
 
-
+	window->setView(view);
 	window->draw(bg);
 	window->draw(player);
 	window->draw(enemy);
 	window->draw(enemy2);
-	window->draw(mouse);
+
 	window->setView(view);
+	window->draw(mouse);
+
+
 	endDraw();
 }
