@@ -12,11 +12,9 @@ public:
 	void setView(sf::View* newView);
 	void setInput(Input* in);
 
-	sf::RectangleShape getRect();
 private:
 	Input* input;
 	sf::View* view;
-	sf::RectangleShape rect;
 	sf::Texture background;
 };
 

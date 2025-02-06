@@ -11,16 +11,11 @@ void Background::setInput(Input* in)
 	input = in;
 }
 
-sf::RectangleShape Background::getRect()
-{
-	return rect;
-}
-
 Background::Background()
 {
 	view = nullptr;
 	input = nullptr;
-	rect.setSize(sf::Vector2f(11038,675));
+	setSize(sf::Vector2f(11038,675));
 }
 
 Background::~Background()
@@ -34,13 +29,13 @@ void Background::handleInput(float dt)
 	
 	
 	if (input->isKeyDown(sf::Keyboard::A) &&
-		-screenEdgeLeft < rect.getGlobalBounds().left + view->getSize().x / 2)
+		-screenEdgeLeft < getGlobalBounds().left + view->getSize().x / 2)
 	{
 		view->move(sf::Vector2f(-1100, 0) * dt);
 	}
 
 	if (input->isKeyDown(sf::Keyboard::D) &&
-		screenEdgeRight < rect.getGlobalBounds().left + rect.getGlobalBounds().width + view->getSize().x / 2)
+		screenEdgeRight < getGlobalBounds().left + getGlobalBounds().width + view->getSize().x / 2)
 	{
 		view->move(sf::Vector2f(1100, 0) * dt);
 	}

@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Background.h"
+#include "Cursor.h"
 #include <string.h>
 #include <iostream>
 
@@ -30,9 +31,13 @@ private:
 	sf::Texture textureCity;
 	sf::Texture textureBall;
 	sf::Texture textureLevel1;
+	sf::Texture textureCursor;
 
 	Player player;
 	Background bg;
+	Cursor mouse;
+
+
 	Enemy enemy;
 	Enemy enemy2;
 
